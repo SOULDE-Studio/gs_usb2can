@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STM32 Bootloader Flasher</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>STM32 Bootloader Flasher</h1>
+        
+        <div class="controls">
+            <div class="form-group">
+                <label for="serial-port">Serial Port:</label>
+                <select id="serial-port">
+                    <option value="">-- Select Port --</option>
+                </select>
+                <button id="refresh-ports">Refresh</button>
+            </div>
+            
+            <div class="form-group">
+                <label for="firmware-file">Firmware File:</label>
+                <input type="file" id="firmware-file" accept=".bin">
+            </div>
+            
+            <div class="form-group">
+                <label for="use-crc">Use CRC32:</label>
+                <input type="checkbox" id="use-crc" checked>
+            </div>
+            
+            <div class="buttons">
+                <button id="connect-btn">Connect</button>
+                <button id="info-btn">Get Info</button>
+                <button id="flash-btn">Flash Firmware</button>
+                <button id="disconnect-btn">Disconnect</button>
+            </div>
+        </div>
+        
+        <div class="info-panel">
+            <h2>Bootloader Info</h2>
+            <div id="bootloader-info">
+                <p>Connect to device to see info</p>
+            </div>
+        </div>
+        
+        <div class="progress-panel">
+            <h2>Flashing Progress</h2>
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+            <div id="progress-text">0%</div>
+            <div id="status-text">Ready</div>
+        </div>
+        
+        <div class="console">
+            <h2>Console</h2>
+            <div id="console-output"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
